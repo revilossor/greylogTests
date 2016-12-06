@@ -1,12 +1,12 @@
 module.exports = class GreylogComms {
   constructor() {
-    var Gelf = require('gelf');
-    this._gelf = new Gelf(require('./config'));
+    this.request = require('request');
+    this.config = require('./config');
   }
   sendMessage(message) {
-    this._gelf.emit('gelf.log', message);
-  }
-  sendData(data) {
-    this._gelf.emit('gelf.log', data);
+    this.request.post({
+      url : `http://${this.config.host}:${this.config.port}/gelf`,
+      json : {"message":message}
+    });
   }
 };
