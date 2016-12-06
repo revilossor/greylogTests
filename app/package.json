@@ -4,7 +4,8 @@
   "description": "a test app that sends stuff to greylog",
   "main": "main.js",
   "scripts": {
-    "test": "none"
+    "test": "none",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
