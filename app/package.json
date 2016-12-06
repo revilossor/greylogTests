@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/revilossor/greylogTests#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "gelf": "^1.0.3"
   }
 }
