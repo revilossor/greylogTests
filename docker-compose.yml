@@ -16,3 +16,4 @@ services:
       - elasticsearch
     ports:
       - "9000:9000"
+      - "12201:12201"

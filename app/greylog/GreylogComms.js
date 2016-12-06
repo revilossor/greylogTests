@@ -1,7 +1,7 @@
-export default class GreylogComms {
+module.exports = class GreylogComms {
   constructor() {
     var Gelf = require('gelf');
-    this._gelf = new Gelf(require('./config');
+    this._gelf = new Gelf(require('./config'));
   }
   sendMessage(message) {
     this._gelf.emit('gelf.log', message);
@@ -9,4 +9,4 @@ export default class GreylogComms {
   sendData(data) {
     this._gelf.emit('gelf.log', data);
   }
-}
+};

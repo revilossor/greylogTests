@@ -1,5 +1,5 @@
 module.exports = {
-  graylogPort: 9000,
+  graylogPort: 12201,
   graylogHostname: '127.0.0.1',
   connection: 'wan',
   maxChunkSizeWan: 1420,
