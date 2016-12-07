@@ -3,7 +3,7 @@ services:
   mongo:
     image: "mongo:3"
     volumes:
-      - "./mongo:/greylog/data/mongo"
+      - "./mongo:/data/db"
   elasticsearch:
     image: "elasticsearch:2"
     command: "elasticsearch -Des.cluster.name='graylog'"
