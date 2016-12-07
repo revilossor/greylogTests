@@ -7,6 +7,11 @@ module.exports = class GreylogComms {
     this.request.post({
       url : `http://${this.config.host}:${this.config.port}/gelf`,
       json : {"message":message}
+    }, function(err, res, status) {
+      if(err) {
+        return console.log('ERROR! : ' + JSON.stringify(err));
+      }
+      console.log(`response ${JSON.stringify(res)}`);
     });
   }
 };
