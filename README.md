@@ -14,3 +14,7 @@ In the system/inputs menu, add a GELF HTTP input on port 12201 - this port is al
 Once this port is mapped, you can curl a message in with this command :
 
 ```curl -XPOST http://127.0.0.1:12201/gelf -p0 -d '{"short_message":"Hello there", "host":"example.org", "facility":"test", "_foo":"bar"}'```
+
+if there are issues with the port mapping, try this
+
+```docker exec -d [graylog container id] curl -XPOST http://127.0.0.1:12201/gelf -p0 -d '{"short_message":"Hello there", "host":"example.org", "facility":"test", "_foo":"bar"}'```

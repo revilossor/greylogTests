@@ -2,6 +2,8 @@ version: '2'
 services:
   mongo:
     image: "mongo:3"
+    volumes:
+      - "./mongo:/greylog/data/mongo"
   elasticsearch:
     image: "elasticsearch:2"
     command: "elasticsearch -Des.cluster.name='graylog'"
