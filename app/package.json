@@ -19,6 +19,6 @@
   "homepage": "https://github.com/revilossor/greylogTests#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "request": "^2.79.0"
+    "winston": "^2.3.0"
   }
 }
