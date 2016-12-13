@@ -1,13 +1,17 @@
 var express = require('express');
 var app = express();
 var port = 8080;
-var GreylogComms = require('./greylog/GreylogComms');
-var greylogger = new GreylogComms();
+var graylogger = require('./graylog/graylogger');
+var gelf = require('./graylog/gelf');
 
-app.use('/', (req, res) => {
-  console.log('hit');
-  greylogger.sendMessage('hit test endpoint');
-  res.json({some:"data"});
+app.use('/test', (req, res) => {
+  var gelfy = gelf.get(req);
+
+  console.log('gelf to send is : ' + JSON.stringify(gelfy));
+
+  graylogger.send(gelf);
+
+  res.status(200).json({some:"data"});
 });
 
 app.listen(port, () => {
