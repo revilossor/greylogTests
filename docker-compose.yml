@@ -23,6 +23,8 @@ services:
       - "12201:12201"
   app:
     image: "revilossor/graylog-test-app"
+    depends_on:
+      - graylog
     links:
       - graylog
     ports:
