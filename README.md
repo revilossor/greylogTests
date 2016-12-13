@@ -1,6 +1,20 @@
 ## playing round with greylog
 -----
 
+to start, do ```docker-compose up``` - this will start graylog, and all its dependant containers, and a container with a test app running in it.
+
+Then go to ```localhost:9000``` to view the graylog dashboard ( you'll need login / password - docker exec into the graylog container to add if you need to )
+
+If you do ```curl localhost/test``` the test app will respond with {some:"data"}, and log to a file in the test app container, and send a gelf message to graylog ( via http ). this will show on the test-app dashboard.
+
+
+ive added an extractor to greylog that will pull the JSON string out of a message that looks like ```log : {some:"data"}```, and one to parse the json data into a field for each key.
+
+----
+
+-----
+
+
 to start greylog in docker :
 
 ```docker-compose up```
