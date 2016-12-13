@@ -21,3 +21,9 @@ services:
     ports:
       - "9000:9000"
       - "12201:12201"
+  app:
+    image: "revilossor/graylog-test-app"
+    links:
+      - graylog
+    ports:
+      - "80:8080"
