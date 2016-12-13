@@ -5,7 +5,12 @@ module.exports = {
   send:(content) => {
     request.post({
       url : `http://${config.host}:${config.port}/gelf`,
-      form : content
+      form : {
+        short_message:'from app',
+        host:'example.org',
+        facility:'test',
+        _foo:'bar'
+      }
     }, function(err, res, status) {
       if(err) {
         return console.log('ERROR! : ' + JSON.stringify(err));
