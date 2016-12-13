@@ -1,7 +1,9 @@
-var config = require('./config');
+var winston = require('winston');
+
+winston.add(winston.transports.File, { filename: './log/app.log' });
 
 module.exports = {
   send:(content) => {
-    console.log('not sent content is : ' + JSON.stringify(content));
+    winston.info('not sent content is : ' + JSON.stringify(content));
   }
 };
